@@ -1,41 +1,64 @@
-# TI2006B · Soporte analítico para la toma de decisiones
+# TI2006B Capstone Project Repository
 
-Repositorio base para la clase **TI2006B**, orientada a diseñar, evaluar y comunicar decisiones informadas en sistemas de información, plataformas analíticas y sistemas distribuidos.
+Template for a reproducible business-intelligence, analytics, data-engineering, or machine-learning capstone project.
 
-La clase combina Business Intelligence (BI), ingeniería de datos, Machine Learning (ML), visualización y arquitectura de software. El objetivo no es aprender una herramienta aislada, sino entender cómo el contexto de negocio, los datos, los costos, la confiabilidad, la seguridad y la operación cambian la decisión técnica.
+The repository should make a decision easy to review:
 
-## Pregunta guía
+**business question → data → analysis → dashboard/model → decision → operation**
 
-> ¿Qué decisión debemos tomar, qué evidencia la respalda y qué consecuencias aceptamos al elegir una arquitectura o una herramienta?
+This template is designed for Visual Studio Code and Anaconda. Power BI and Tableau artifacts may remain in their native applications, but the repository must contain their metric definitions, screenshots or exports, refresh instructions, and limitations.
 
-## Cómo navegar el repositorio
+## Recommended workflow
 
-- [`docs/`](docs/): propósito, ruta de aprendizaje, criterios de decisión y CI/CD.
-- [`assignments/`](assignments/): entregas individuales para practicar análisis y comunicación.
-- [`activities/`](activities/): actividades breves de clase, laboratorios y discusiones.
-- [`projects/`](projects/): proyectos integradores con alcance y rúbrica iniciales.
-- [`templates/example-repository/`](templates/example-repository/): esqueleto que cada equipo replicará y adaptará para su proyecto.
+1. Create an Anaconda environment from [`environment.yml`](environment.yml).
+2. Open the repository folder in VS Code and install the recommended extensions.
+3. Write the problem and success measures in [`docs/project-charter.md`](docs/project-charter.md).
+4. Record important technical choices as ADRs in [`docs/adr/`](docs/adr/).
+5. Keep exploratory work in [`notebooks/`](notebooks/); move reusable logic to [`src/`](src/).
+6. Store only licensed, synthetic, anonymized, or small reproducible data samples in [`data/`](data/).
+7. Publish the decision in [`reports/`](reports/) and document the dashboard in [`dashboards/`](dashboards/).
+8. Run tests and notebook checks before opening a pull request.
 
-## Ruta de aprendizaje
+## Repository map
 
-1. **Problema y contexto:** objetivos, actores, restricciones y métricas de éxito.
-2. **Datos y evidencia:** calidad, gobernanza, sesgos, privacidad, trazabilidad y reproducibilidad.
-3. **Arquitectura:** batch/streaming, almacenamiento, integración, APIs, escalabilidad y resiliencia.
-4. **BI y visualización:** modelos semánticos, KPIs, dashboards y comunicación ejecutiva.
-5. **ML aplicado:** formulación, evaluación, explicabilidad, riesgo y operación de modelos.
-6. **Plataformas:** comparación razonada de alternativas como Snowflake, Power BI, Tableau y servicios equivalentes.
-7. **Decisión y operación:** ADRs, costos, seguridad, observabilidad, CI/CD y revisión posterior.
+```text
+.
+├── .github/workflows/       # CI checks; deployment is intentionally gated
+├── .vscode/                 # shared editor and extension recommendations
+├── assignments/             # capstone milestones and evidence
+├── dashboards/              # BI metric catalog, exports, screenshots, refresh docs
+│   ├── powerbi/             # PBIX/PBIT guidance and exported evidence
+│   └── tableau/             # TWB/TWBX guidance and exported evidence
+├── data/                    # raw, processed, external, and data documentation
+├── docs/                    # charter, architecture, ADRs, governance, runbook
+├── notebooks/               # analysis notebooks, ordered by execution flow
+├── reports/                 # executive brief, technical report, figures
+├── src/                     # tested reusable Python modules
+├── tests/                   # unit and data-quality tests
+├── environment.yml          # Anaconda environment definition
+└── README.md
+```
 
-## Convenciones para entregas
+## Rules for a trustworthy capstone
 
-Cada decisión importante debe incluir:
+- Never commit passwords, API keys, personal data, private company data, or unlicensed extracts.
+- Every dataset must identify its source, license, retrieval date, transformations, and known limitations.
+- Every KPI must have one definition, owner, grain, time zone, freshness target, and calculation.
+- A dashboard is evidence for a decision, not the decision itself.
+- A notebook should be runnable from the repository root and explain what its results do and do not support.
+- Do not hide failed experiments; summarize them in the report or a decision log.
 
-- contexto y alternativas consideradas;
-- criterios y pesos de evaluación;
-- evidencia, supuestos y riesgos;
-- decisión tomada y consecuencias aceptadas;
-- plan de validación y condiciones para revisarla.
+## Local setup
 
-## Licencia
+```bash
+conda env create -f environment.yml
+conda activate ti2006b-capstone
+code .
+jupyter lab
+```
 
-El material original de este repositorio se publica bajo [CC0 1.0 Universal](LICENSE). Las herramientas, datasets y referencias externas conservan sus propias licencias; cada entrega debe documentarlas.
+In VS Code, open a notebook and select the `ti2006b-capstone` kernel from the top-right kernel picker. The dashboard applications are installed and managed separately according to team or institution policy.
+
+## Suggested capstone milestones
+
+See [`assignments/README.md`](assignments/README.md) for the evidence expected at each stage. A project is complete when another student can understand the decision, reproduce the analysis, inspect the dashboard assumptions, and identify what should be monitored after delivery.
