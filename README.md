@@ -62,3 +62,29 @@ In VS Code, open a notebook and select the `ti2006b-capstone` kernel from the to
 ## Suggested capstone milestones
 
 See [`assignments/README.md`](assignments/README.md) for the evidence expected at each stage. A project is complete when another student can understand the decision, reproduce the analysis, inspect the dashboard assumptions, and identify what should be monitored after delivery.
+
+## Our Project: Pokémon Data Analysis
+
+### Project Question
+How do Pokémon types and base statistics compare across different species?
+
+### Target Audience
+This project is for students and beginners interested in learning data analysis.
+
+### Data Source
+We will use public Pokémon data from the veekun/pokedex GitHub repository.
+
+### Expected Output
+We expect to create simple graphs and comparisons using Python and Plotly.
+
+### Current Limitations
+The dataset contains Pokémon species and statistics, not real Pokémon GO player information.
+
+### How to Start
+1. Download or clone the repository.
+2. Install the required Python libraries.
+3. Open the analysis notebook in the notebooks folder.
+4. Run the notebook to generate the graphs.
+
+### Reflection
+This repository could be difficult to use if the files were disorganized or the instructions were unclear. To prevent this, we organized the files into separate folders for data, code, notebooks, and reports. We also included instructions to help other students understand and use the project.
