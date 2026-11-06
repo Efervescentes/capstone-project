@@ -88,3 +88,29 @@ The dataset contains Pokémon species and statistics, not real Pokémon GO playe
 
 ### Reflection
 This repository could be difficult to use if the files were disorganized or the instructions were unclear. To prevent this, we organized the files into separate folders for data, code, notebooks, and reports. We also included instructions to help other students understand and use the project.
+
+## Our Project: Pokémon Data Analysis
+
+### Project Question
+How do Pokémon types and base statistics compare across different species?
+
+### Target Audience
+This project is for students and beginners who want to learn about data analysis using Pokémon.
+
+### Data Source
+We will use public Pokémon species, type, and base-statistics data from the veekun/pokedex GitHub repository.
+
+### Expected Results
+We expect to compare Pokémon characteristics and create interactive graphs using Python and Plotly.
+
+### Current Limitations
+This dataset contains general Pokémon species and statistics, not real Pokémon GO player data. Therefore, our results cannot describe actual player behavior or gameplay.
+
+### How to Start
+1. Download or clone the repository.
+2. Install the required Python libraries.
+3. Open `notebooks/01-pokemon-go-analysis.ipynb` in Jupyter Notebook.
+4. Run the notebook to generate the graphs.
+
+### Reflection
+This repository could be difficult for another student to use if the files were disorganized or the instructions were unclear. To prevent this, we organized the project into separate folders for data, notebooks, code, and reports. We also included information about the data source and instructions on how to start. This will make it easier for other students to understand and reproduce our analysis.
